@@ -1,0 +1,368 @@
+body {
+    font-family: 'Alegreya', serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    background: #000;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+.logotext {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+.logotext h1, h2 {
+    margin: 0;
+}
+.logopark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 120px;
+}
+.logopark img {
+    width: 70px;
+    height: 70px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 100px;
+    font-family: 'Alegreya', serif;
+    font-weight: 600;
+}
+nav ul li {
+    margin-right: 50px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.container-1 {
+    position: relative;
+    text-align: center;
+}
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 900px; /* Высота баннера */
+}
+.ban1 {
+    width: 100%;
+    height: 900px; /* Высота баннера */
+    display: none; /* Скрыть все баннеры по умолчанию */
+}
+.banner-container {
+    position: absolute;
+    top: 50%;
+    left: 120px; /* Установите отступ слева */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    text-align: left; /* Выровнять текст по левому краю */
+}
+.banner-text {
+    color: white;
+    font-size: 36px; /* Установите нужный размер шрифта */
+    transition: opacity 0.5s ease; /* Плавный переход для изменения прозрачности */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 600px;
+    height: 165px;
+}
+.button-container {
+    position: relative; /* Позиционирование контейнера кнопки */
+    margin-top: 20px; /* Отступ сверху для кнопки */
+}
+.banner-button {
+    width: 233px;
+    height: 57px;
+    padding: 10px 20px; /* Отступы кнопки */
+    font-size: 1.2em; /* Размер шрифта кнопки */
+    color: rgb(0, 0, 0);
+    background-color: #AAE632; /* Цвет фона кнопки */
+    border: none;
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+.menuban-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 200px;
+    gap: 50px;   
+    align-self: flex-end; /* Это переместит контейнер вниз, если это применимо */
+}
+.menuban {
+    text-align: left; /* Центрирование текста внутри меню */
+    color: white; /* Цвет текста */
+    cursor: pointer;
+}
+.menuban h1 {
+    font-size: 2em; /* Размер заголовка */
+    margin: 0; /* Убираем отступы */
+}
+.menuban p {
+    margin: 0; /* Убираем отступы */
+}
+.vertical-line {
+    width: 2px; /* Ширина линии */
+    height: 70px; /* Высота линии */
+    background-color: white; /* Цвет линии */
+}
+.banner-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-slider img { 
+    display: none; 
+    position: absolute; 
+    width: 100%; 
+    height: auto; /* Добавлено для сохранения пропорций */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+} 
+
+.banner-slider img.active { 
+    display: block; 
+    opacity: 1; 
+    transform: scale(1); 
+} 
+
+.banner-slider img.inactive { 
+    opacity: 0; 
+    transform: scale(1.05); 
+}
+
+
+
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-2 h1 {
+    margin-bottom: 109px;
+}
+.container-2 p {
+    max-width: 640px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.komanda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 115px;
+}
+
+
+
+
+.container-3 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+}
+.container-3 h1 {
+    text-align: center;
+    margin-bottom: 140px;
+}
+.block {
+    gap: 50px;
+    display: flex;
+    width: 400px;
+    height: 478px;
+    background-color: #fff;
+    border: 1px solid #000;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center
+}
+.block p {
+    max-width: 338px;
+}
+.block h3 {
+    max-width: 300px;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+} 
+.blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+.container-4 h1 {
+    margin-top: 140px;
+    margin-bottom: 140px;
+    text-align: center;
+}
+.block2 {
+    width: 500px;
+    height: 702px;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 20px;
+
+}
+.blocks2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.rab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    gap: 5px;
+}
+.rab img {
+    width: 196px;
+    height: 149px;
+}
+.block2 p {
+    max-width: 450px;
+    margin-left: 15px;
+}
+.block2 h4 {
+    font-size: 24px;
+    margin-left: 15px;
+}
+.block2 h3 {
+    font-size: 24px;
+}
+.block2 button {
+    width: 270px;
+    height: 55px;
+    cursor: pointer;
+    background-color: #AAE632;
+    border: none;
+    font-family: 'Alegreya', serif;
+    font-size: 18px;
+    margin-left: 100px;
+    margin-top: 60px;
+}
+
+
+
+
+.container-5 {
+    background-color: #7C7C7C;
+    margin-top: 140px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+* {
+    box-sizing: border-box;
+ }
+ .container-5 h1 {
+    text-align: center
+ }
+ .decor {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 30px;
+ }
+ .form-left-decoration, .form-right-decoration {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+ }
+ .form-left-decoration {
+    bottom: 60px;
+    left: -30px;
+ }
+ .form-right-decoration {
+    top: 60px;
+    right: -30px;
+ }
+ .form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 30px;
+    background: white;
+ }
+ .form-left-decoration:before {
+    top: -20px;
+ }
+ .form-left-decoration:after {
+    top: 20px;
+    left: 10px;
+ }
+ .form-right-decoration:before {
+    top: -20px;
+    right: 0;
+ }
+ .form-right-decoration:after {
+    top: 20px;
+    right: 10px;
+ }
+ .circle {
+    position: absolute;
+    bottom: 80px;
+    left: -55px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+ }
+ .form-inner {
+    padding: 50px;
+ }
+ .form-inner input, .form-inner textarea {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 40px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+ }
+ .form-inner input[type="submit"] {
+    margin-top: 30px;
+    background: #AAE632;
+    border-bottom: 4px solid #AAE632;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+ }
+ .form-inner textarea {
+    resize: none;
+ }
+ .form-inner h3 {
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #707981;
+ }
+
+
+
+ .container-6 {
+    background-color: #000;
+    margin-top: 140px;
+ }
