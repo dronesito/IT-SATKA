@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Парк ИТ-Сатка</title>
+</head>
+<body>
+    <header>
+        <div class="logopark">
+            <img src="img/5dce73faa8c4104bb6e90f80_LOGO_11120copy2-p-500.png" alt="">
+            <div class="logotext">
+                <h1 style="font-family: 'Holtwood One SC', cursive;">Парк It</h1>
+                <h2 style="font-family: 'Alegreya', cursive;">Сатка</h2>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="font-family: 'Alegreya', serif;">Главная</a></li>
+                <li><a href="#container-3" style="font-family: 'Alegreya', serif;">О нас</a></li>
+                <li><a href="#container-2" style="font-family: 'Alegreya', serif;">Предлагаем</a></li>
+                <li><a href="#container-5" style="font-family: 'Alegreya', serif;">Контакты</a></li>
+                <li><a href="4about.html" style="font-family: 'Alegreya', serif;">Приложение</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <div class="container-1">
+        <div class="banner-slider">
+            <img src="img/1банер.jpg" class="active" alt="Banner 1">
+            <img src="img/2банер.jpg" class="inactive" alt="Banner 2">
+            <img src="img/3банер.png" class="inactive" alt="Banner 3">
+        </div>
+        <div class="banner-container">
+            <div class="banner-text">Внедрение и сопровождение программ на платформе 1С:Предприятие</div>
+            <div class="button-container">
+                <button class="banner-button">Подробнее</button>
+            </div>
+           <div class="menuban-container">
+    <div class="menuban" onclick="showBanner(0)">
+        <h1>01</h1>
+        <p>Компания</p>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="menuban" onclick="showBanner(1)">
+        <h1>02</h1>
+        <p>Разработка</p>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="menuban" onclick="showBanner(2)">
+        <h1>03</h1>
+        <p>WEB</p>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="container-2" id="container-2">
+        <div class="komanda">
+        <h1>Наша команда</h1>
+        <p>Мы, команда профессионалов в области информационных технологий. Имеем большой опыт работы с различными информационными системами, а также опыт разработки собственных программных продуктов.</p>
+        <p>В составе команды работают специалисты, которые много лет занимались внедрением и сопровождением системы SAP и программных продуктов на платформе 1С:Предприятие.</p>
+        <p>В активе собственных разработок наших программистов MES-система, система внутреннего ЭДО, интернет-портал. Все эти программные продукты эксплуатируются на промышленных предприятиях.</p>
+        <p>Среди наших клиентов предприятия "Группы Магнезит", ООО "Магнезит Монтаж Сервис", ООО "Магсити", ООО "Завод плавленого периклаза", ООО "Ремонтно-механическое предприятие", АНО ДПО "Центр обучения и развития персонала", ООО "Единый консалтинговый центр", ООО "Саткинская нерудная компания", ООО "Завод брикетированных материалов", ООО "НПК "Огнеупор", ООО "Автогарант", ООО "Магистраль".</p>
+    </div>
+    </div>
+    <div class="container-3">
+        <h1>Наши услуги</h1>
+        <div class="blocks">
+        <div class="block">
+            <h2>Внедрение, сопровождение 1С:</h2>
+            <p>Окажем помощь в подборе и подключении программных продуктов и сервисов 1С
+                Оптимально настроим продукт с учетом специфики организации
+                Поможем в решении технических вопросов по эксплуатации программного продукта
+                Проконсультируем при выполнении различных процедур и подготовке отчетности
+                Дополним стандартную 1С отчетами и документами, используемыми в Вашей компании</p>
+        </div>
+        <div class="block">
+            <h3>Разработка программного обеспечения под заказ:</h3>
+            <p>Разработка прораммного обеспечения на .net под ваши требования
+               Создание сайтов и web-приложений
+               Доработка типовых и нестандартных конфигураций на платформе 1С
+               Разработка модулей, отчетов, расширение стандартного функционала в системе SAP
+               Разработка интеграционных решений между различными системами</p>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="container-4">
+        <h1>Наши работы</h1>
+        <div class="blocks2">
+        <div class="block2">
+            <div class="rab">
+            <img src="img/1robota.png" alt="">
+            <h2>Система контроля работы автотранспорта и учета перевозимых грузов</h2>
+        </div>
+        <h4>Система позволяет:</h4>
+            <p>Вести учет перевозимых материалов (насыпных и в таре) с использованием автомобильных и ж/д весов Формировать различные первичные документы (путевые листы, ТТН и т.п.) Осуществлять контроль за работой и перемещениями автотранспорта с помощью средств спутниковой навигации Подключать различное оборудование (весы, сканеры штрих-кодов, транспондеры и т.п) Обмениваться данными с различными системами (SAP, 1C и т.д.) Формировать отчеты по перевозкам в различных ракурсах.</p>
+                <button>Подробнее</button>
+            </div>
+        <div class="block2">
+            <div class="rab">
+            <img src="img/2rabota.png" alt="">
+            <h3>Система электронного документооборота предприятия</h3>
+        </div>
+        <h4>Система позволяет:</h4>
+            <p>Однократная регистрация документа с уникальным идентификатором Единая база документов Система поиска документов Согласование документов Прозрачность прохождения, контроль за исполнением документов Доступ из любой точки, где есть интернет Интеграция с корпоративной электронной почтой и различными системами (SAP, 1C и т.д.)</p>
+                <button>Подробнее</button>
+            </div>
+            </div>
+    </div>
+    <div class="container-5">
+        <h1>Связаться с нами</h1>
+        <form class="decor">
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+            <h3>Написать нам</h3>
+            <input type="text" placeholder="Username">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Сообщение..." rows="3"></textarea>
+            <input type="submit" value="Отправить">
+            </div>
+            </form>
+    </div>
+    <div class="container-6">
+        
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
