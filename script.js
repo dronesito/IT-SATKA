@@ -26,7 +26,7 @@ function animateText(oldText, newText) {
                 addText(newText);
             }, 300); // Пауза перед началом добавления нового текста
         }
-    }, 20); // Скорость удаления букв
+    }, 10); // Скорость удаления букв
 }
 // Функция для добавления нового текста
 function addText(newText) {
@@ -38,7 +38,7 @@ function addText(newText) {
         if (index === newTextLength) {
             clearInterval(addInterval);
         }
-    }, 30); // Скорость добавления букв
+    }, 20); // Скорость добавления букв
 }
 // Скрыть все баннеры, кроме первого 
 function showBanner(index) { 
