@@ -226,6 +226,10 @@ nav ul li:hover::after {
     margin: 0;
     font-size: 24px;
 } 
+.block h2 {
+    font-size: 24px;
+    margin: 0;
+} 
 .blocks {
     display: flex;
     flex-direction: row;
@@ -274,6 +278,9 @@ nav ul li:hover::after {
     margin-left: 15px;
 }
 .block2 h3 {
+    font-size: 24px;
+}
+.block2 h2 {
     font-size: 24px;
 }
 .block2 button {
