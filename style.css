@@ -39,16 +39,41 @@ nav ul {
     font-family: 'Alegreya', serif;
     font-weight: 600;
 }
+
 nav ul li {
     margin-right: 50px;
+    position: relative; /* Для позиционирования псевдоэлемента */
 }
+
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
+    position: relative; /* Для псевдоэлемента */
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавный переход для цвета и трансформации */
 }
+
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #AAE632; /* Цвет текста при наведении */
+    transform: scale(1.1); /* Увеличиваем размер текста при наведении */
 }
+
+/* Псевдоэлемент для эффекта подчеркивания */
+nav ul li::after {
+    content: ""; /* Создаем пустой псевдоэлемент */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; /* Центрируем по горизонтали */
+    bottom: -5px; /* Положение снизу */
+    width: 0; /* Начальная ширина */
+    height: 2px; /* Высота подчеркивания */
+    background-color: #AAE632; /* Цвет подчеркивания */
+    transition: width 0.3s ease, left 0.3s ease; /* Плавный переход */
+}
+
+nav ul li:hover::after {
+    width: 100%; /* Ширина подчеркивания при наведении */
+    left: 0; /* Сдвигаем влево */
+}
+
 .container-1 {
     position: relative;
     text-align: center;
@@ -57,6 +82,15 @@ nav ul li a:hover {
     position: relative;
     width: 100%;
     height: 900px; /* Высота баннера */
+}
+.banner-slider img {
+    transition: opacity 0.5s ease-in-out; /* Плавный переход для изменения прозрачности */
+    opacity: 0; /* Начальная прозрачность */
+    position: absolute; /* Позиционирование для наложения */
+    width: 100%; /* Ширина баннера */
+}
+.banner-slider img.active {
+    opacity: 1; /* Полная видимость для активного баннера */
 }
 .ban1 {
     width: 100%;
@@ -78,10 +112,6 @@ nav ul li a:hover {
     width: 600px;
     height: 165px;
 }
-.button-container {
-    position: relative; /* Позиционирование контейнера кнопки */
-    margin-top: 20px; /* Отступ сверху для кнопки */
-}
 .banner-button {
     width: 233px;
     height: 57px;
@@ -92,6 +122,9 @@ nav ul li a:hover {
     border: none;
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s; /* Плавный переход цвета */
+}
+.banner-button:hover {
+    box-shadow: 0px 5px 15px rgba(124, 154, 42, 0.5); /* Измененная тень для эффекта наведения */
 }
 .menuban-container {
     display: flex;
@@ -136,10 +169,6 @@ nav ul li a:hover {
     transform: scale(1); 
 } 
 
-.banner-slider img.inactive { 
-    opacity: 0; 
-    transform: scale(1.05); 
-}
 
 
 
@@ -258,8 +287,17 @@ nav ul li a:hover {
     margin-left: 100px;
     margin-top: 60px;
 }
-
-
+.but {
+    margin-top: 90px;
+    padding-bottom: 59px;
+}
+.but1 {
+    padding-bottom: 59px;
+    margin-top: 25px;
+}
+.block2 button:hover {
+    box-shadow: 0px 7px 15px rgba(124, 154, 42, 0.5); /* Исправлено значение на 15px */
+}
 
 
 .container-5 {
@@ -363,6 +401,45 @@ nav ul li a:hover {
 
 
  .container-6 {
-    background-color: #000;
-    margin-top: 140px;
+    background-color: #000000;
+    color: #fff;
+ }
+ .logopark1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 120px;
+    padding-top: 120px;
+}
+.logopark1 img {
+    width: 70px;
+    height: 70px;
+}
+ .adress h1, h2, h3 {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 30px;
+ }
+ .adress {
+    display: flex;
+    margin-top: 88px;
+    margin-left: 120px;
+    justify-content: space-between;
+ }
+ .adr {
+    display: flex;
+    flex-direction: column;
+ }
+ .ssyylky {
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    height: 155px;
+    gap: 40px;
+    max-width: 400px;
+    margin-top: 76px;
+ }
+ .karta {
+    margin-right: 400px;
+    margin-bottom: 100px;
  }
