@@ -9,6 +9,7 @@ const texts = [
 ]; 
 const bannerTextElement = document.querySelector('.banner-text'); 
 const menuItems = document.querySelectorAll('.menuban'); 
+const buttonContainer = document.querySelector('.button-container'); // Получаем элемент кнопки
 // Функция для анимации текста
 function animateText(oldText, newText) {
     const textLength = oldText.length;
@@ -23,9 +24,9 @@ function animateText(oldText, newText) {
             // Пауза перед добавлением нового текста
             setTimeout(() => {
                 addText(newText);
-            }, 300); // Уменьшена пауза перед началом добавления нового текста
+            }, 300); // Пауза перед началом добавления нового текста
         }
-    }, 20); // Уменьшена скорость удаления букв
+    }, 20); // Скорость удаления букв
 }
 // Функция для добавления нового текста
 function addText(newText) {
@@ -37,24 +38,29 @@ function addText(newText) {
         if (index === newTextLength) {
             clearInterval(addInterval);
         }
-    }, 30); // Уменьшена скорость добавления букв
+    }, 30); // Скорость добавления букв
 }
 // Скрыть все баннеры, кроме первого 
 function showBanner(index) { 
     banners.forEach((banner, i) => { 
         if (i === index) { 
             banner.classList.add('active'); 
-            banner.classList.remove('inactive'); // Убедитесь, что класс inactive удален
+            banner.classList.remove('inactive'); 
         } else { 
-            banner.classList.add('inactive'); // Добавляем класс inactive для скрытия
             banner.classList.remove('active'); 
+            banner.classList.add('inactive'); 
         } 
     }); 
     // Получаем текущий текст и новый текст
     const oldText = bannerTextElement.textContent;
     const newText = texts[index];
-    // Запускаем анимацию текста
-    animateText(oldText, newText);
+    // Убираем кнопку
+    // buttonContainer.style.display = 'none'; // Удалите или закомментируйте эту строку
+    // Задержка перед началом анимации текста
+    setTimeout(() => {
+        animateText(oldText, newText); // Запускаем анимацию текста
+       
+    }, 500); // Задержка перед началом анимации текста
     // Обновить цвет текста в меню 
     menuItems.forEach((item, i) => { 
         const h1Element = item.querySelector('h1'); 
@@ -67,12 +73,16 @@ function showBanner(index) {
             pElement.style.color = ''; // Удалить цвет для неактивных 
         } 
     }); 
-} 
-// Менять баннер каждые 5 секунд 
+}
+// Менять баннер каждые 10 секунд 
 function changeBanner() { 
     currentIndex = (currentIndex + 1) % totalBanners; 
     showBanner(currentIndex); 
 } 
 // Инициализация 
 showBanner(currentIndex); 
-setInterval(changeBanner, 5000); // 5000 миллисекунд = 5 секунд
+setInterval(changeBanner, 10000); // 10000 миллисекунд = 10 секунд
+
+
+
+
