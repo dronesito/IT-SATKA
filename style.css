@@ -438,22 +438,40 @@ nav ul li:hover::after {
     margin-top: 140px;
     padding-top: 140px;
     padding-bottom: 140px;
+    position: relative; /* Добавьте позиционирование для контейнера */
+    overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
 }
 * {
     box-sizing: border-box;
- }
- .container-5 h1 {
-    text-align: center;
-    color: white ;
- }
- .background-video3 {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    object-fit: cover; /* Заполнение контейнера без искажений */
-    z-index: -1; /* Убедитесь, что видео находится позади текста */
 }
-
+.container-5 h1 {
+    text-align: center;
+    color: white;
+    position: relative; /* Добавьте позиционирование для заголовка */
+    z-index: 1; /* Убедитесь, что заголовок выше фона */
+}
+.container-5::before {
+    content: ""; /* Создаем псевдоэлемент */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Прикрепляем к верхней части */
+    left: 0; /* Прикрепляем к левой части */
+    right: 0; /* Прикрепляем к правой части */
+    bottom: 0; /* Прикрепляем к нижней части */
+    background-image: url('img/3банер.png'); /* Замените на путь к вашей картинке */
+    background-size: cover; /* Заполняем весь контейнер */
+    background-position: center; /* Центрируем изображение */
+    animation: zoom 20s infinite alternate; /* Запускаем анимацию */
+    z-index: 0; /* Помещаем псевдоэлемент за содержимым */
+}
+/* Анимация увеличения фона */
+@keyframes zoom {
+    0% {
+        transform: scale(1); /* Начальный размер */
+    }
+    100% {
+        transform: scale(1.1); /* Конечный размер */
+    }
+}
  .decor {
     position: relative;
     max-width: 400px;
