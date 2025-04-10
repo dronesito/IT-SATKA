@@ -85,16 +85,28 @@ nav ul li:hover::after {
     position: relative;
     width: 100%;
     height: 900px; /* Высота баннера */
+    overflow: hidden; /* Скрыть часть изображения, выходящую за пределы контейнера */
 }
+
 .banner-slider img {
-    transition: opacity 0.5s ease-in-out; /* Плавный переход для изменения прозрачности */
-    opacity: 0; /* Начальная прозрачность */
     position: absolute; /* Позиционирование для наложения */
     width: 100%; /* Ширина баннера */
+    height: 100%; /* Высота баннера */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Плавный переход для изменения прозрачности и трансформации */
+    opacity: 0; /* Начальная прозрачность */
+    transform: scale(0.9); /* Начальный размер уменьшен для эффекта */
 }
+
 .banner-slider img.active {
     opacity: 1; /* Полная видимость для активного баннера */
+    transform: scale(1.05); /* Увеличение до нормального размера с эффектом увеличения */
 }
+
+.banner-slider img.inactive {
+    opacity: 0; /* Уменьшение прозрачности для неактивных изображений */
+    transform: scale(0.9); /* Уменьшенный размер для неактивных изображений */
+}
+
 .ban1 {
     width: 100%;
     height: 900px; /* Высота баннера */
@@ -202,11 +214,63 @@ nav ul li:hover::after {
     display: flex;
     flex-direction: column;
     margin-top: 140px;
+    position: relative;
+    z-index: 1; /* Установите z-index выше, чтобы текст был поверх видео */
+    position: relative;
+    overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+
+}
+.container-3::before {
+    content: ""; /* Создаем псевдоэлемент */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Прикрепляем к верхней части */
+    left: 0; /* Прикрепляем к левой части */
+    right: 0; /* Прикрепляем к правой части */
+    bottom: 0; /* Прикрепляем к нижней части */
+    background-image: url('img/2банер.jpg'); /* Замените на путь к вашей картинке */
+    background-size: cover; /* Заполняем весь контейнер */
+    background-position: center; /* Центрируем изображение */
+    animation: zoom 20s infinite alternate; /* Запускаем анимацию */
+    opacity: 0.5; /* Прозрачность фона */
+    z-index: -1; /* Помещаем псевдоэлемент за содержимым */
+}
+/* Анимация увеличения фона */
+@keyframes zoom {
+    0% {
+        transform: scale(1); /* Начальный размер */
+    }
+    100% {
+        transform: scale(1.1); /* Конечный размер */
+    }
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполнение контейнера без искажений */
+    z-index: -1; /* Убедитесь, что видео находится позади текста */
 }
 .container-3 h1 {
     text-align: center;
     margin-bottom: 140px;
+    margin-top: 50px;
 }
+.blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative; /* Обеспечивает относительное позиционирование для внутренних элементов */
+    padding: 20px; /* Добавляем отступы для текста */
+}
+.block2 {
+    position: relative; /* Для позиционирования псевдоэлемента */
+    width: 500px;
+    height: 702px;
+    overflow: hidden; /* Скрываем переполнение */
+}
+
 .block {
     gap: 50px;
     display: flex;
@@ -218,7 +282,8 @@ nav ul li:hover::after {
     padding: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    align-content: center
+    align-content: center;
+    margin-bottom: 100px;
 }
 .block p {
     max-width: 338px;
@@ -228,33 +293,89 @@ nav ul li:hover::after {
     text-align: center;
     margin: 0;
     font-size: 24px;
-} 
+}
 .block h2 {
     font-size: 24px;
     margin: 0;
-} 
-.blocks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 
 
-
-
+.container-4 {
+    padding-top: 100px;
+}
 .container-4 h1 {
-    margin-top: 140px;
-    margin-bottom: 140px;
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 .block2 {
+    position: relative; /* Для позиционирования псевдоэлемента */
     width: 500px;
     height: 702px;
     background-color: #fff;
     border: 1px solid black;
     padding: 20px;
+    overflow: hidden; /* Скрываем переполнение */
+}
 
+.block2::before {
+    content: ""; /* Создаем пустой псевдоэлемент */
+    position: absolute; /* Абсолютное позиционирование */
+    top: -100%; /* Начальная позиция выше блока */
+    left: 0; /* Слева */
+    right: 0; /* Справа */
+    height: 100%; /* Высота псевдоэлемента равна высоте блока */
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью */
+    transition: top 0.5s ease; /* Плавный переход для позиции сверху */
+}
+.background-video2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    object-fit: cover; /* Заполнение контейнера без искажений */
+    z-index: -1; /* Убедитесь, что видео находится позади текста */
+}
+
+.block2:hover::before {
+    top: 0; /* При наведении устанавливаем на верх блока */
+}
+
+.block2:hover::after {
+    content: ""; /* Создаем пустой псевдоэлемент для убирания цвета */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Начальная позиция сверху */
+    left: 0; /* Слева */
+    right: 0; /* Справа */
+    height: 100%; /* Высота псевдоэлемента равна высоте блока */
+    background-color: rgba(0, 0, 0, 0.7); /* Черный цвет с прозрачностью */
+    transition: top 0.5s ease; /* Плавный переход для позиции сверху */
+}
+
+.block2:hover::after {
+    top: -100%; /* Убираем цвет обратно наверх при наведении */
+}
+
+.block2 h2,
+.block2 h3,
+.block2 h4,
+.block2 p {
+    position: relative; /* Чтобы текст был выше псевдоэлемента */
+    color: black; /* Цвет текста в обычном состоянии */
+    transition: color 0.3s ease; /* Плавный переход для текста */
+}
+
+.block2:hover h2,
+.block2:hover h3,
+.block2:hover h4,
+.block2:hover p {
+    color: #fff; /* Меняем цвет текста на белый при наведении */
+}
+
+
+.but1, .but {
+    position: relative; /* Чтобы кнопка оставалась на месте */
+    z-index: 2; /* Помещаем кнопку выше псевдоэлемента */
 }
 .blocks2 {
     display: flex;
@@ -294,14 +415,17 @@ nav ul li:hover::after {
     border: none;
     font-family: 'Alegreya', serif;
     font-size: 18px;
-    margin-left: 100px;
     margin-top: 60px;
 }
 .but {
+    display: flex;
+    justify-content: center;
     margin-top: 90px;
     padding-bottom: 59px;
 }
 .but1 {
+    display: flex;
+    justify-content: center;
     padding-bottom: 59px;
     margin-top: 25px;
 }
@@ -311,7 +435,6 @@ nav ul li:hover::after {
 
 
 .container-5 {
-    background-color: #7C7C7C;
     margin-top: 140px;
     padding-top: 140px;
     padding-bottom: 140px;
@@ -320,8 +443,17 @@ nav ul li:hover::after {
     box-sizing: border-box;
  }
  .container-5 h1 {
-    text-align: center
+    text-align: center;
+    color: white ;
  }
+ .background-video3 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    object-fit: cover; /* Заполнение контейнера без искажений */
+    z-index: -1; /* Убедитесь, что видео находится позади текста */
+}
+
  .decor {
     position: relative;
     max-width: 400px;
@@ -413,6 +545,9 @@ nav ul li:hover::after {
  .container-6 {
     background-color: #000000;
     color: #fff;
+ }
+ .container-6 h1 {
+    margin: 0;
  }
  .logopark1 {
     display: flex;
